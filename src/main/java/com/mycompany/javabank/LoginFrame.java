@@ -6,7 +6,10 @@ import java.awt.event.KeyEvent;
 
 public class LoginFrame extends javax.swing.JFrame {
 
-    public LoginFrame() {
+
+
+
+   public LoginFrame() {
         initComponents();
     }
 
@@ -113,24 +116,29 @@ public class LoginFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
+    // Initialise the array for usernames and passwords
+    String[] usernames = {"admin", "user", "johndoe"};
+    String[] passwords = {"password", "userpassword", "johndoepassword"};
+
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
-        // Check for the correct username and password
+        // Username and password validation - fetch the username and password from the text fields
         String username = txtUsrn.getText();
         char[] password = txtPwd.getPassword();
 
-        // Assuming valid credentials
-        if (username.equals("admin") && String.valueOf(password).equals("password")) {
-            // Open the main frame
-            MainFrame mainFrame = new MainFrame();
-            mainFrame.setBalance("1000"); // Set the balance for the admin user
-            mainFrame.setVisible(true);
-            this.dispose(); // Close the login frame
+        // Checks if the username and password from the array is correct
+        boolean valid = false;
+        for (int i = 0; i < usernames.length; i++) {
+            if (username.equals(usernames[i]) && String.valueOf(password).equals(passwords[i])) {
+                valid = true;
+                break;
+            }
         } else {
-            // Display an error message
+            // Display an error message if invalid
             JOptionPane.showMessageDialog(this, "Invalid username or password!");
         }
-    }
 
+    }
+    // If the enter key is pressed - login attempt 
     private void btnLoginKeyPressed(java.awt.event.KeyEvent evt) {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnLoginActionPerformed(null);

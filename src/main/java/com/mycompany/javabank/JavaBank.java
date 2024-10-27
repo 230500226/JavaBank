@@ -12,6 +12,7 @@ package com.mycompany.javabank;
 public class JavaBank {
 
     public static void main(String[] args) {
+        // Start of the program - init the login frame
         LoginFrame loginframe = new LoginFrame();
         loginframe.setVisible(true);
     }
