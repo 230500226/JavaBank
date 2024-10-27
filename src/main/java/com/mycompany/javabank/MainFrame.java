@@ -91,25 +91,34 @@ public class MainFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    // Withdraw button action - Event handler
     private void btnWithdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWithdrawActionPerformed
+        // prompt the user to enter the amount to withdraw
         String amountStr = JOptionPane.showInputDialog(this, "Enter amount to withdraw:");
+        // check if the user entered an amount
         if (amountStr != null && !amountStr.isEmpty()) {
             double amount = Double.parseDouble(amountStr);
             if (amount <= balance) {
+                // deduct the amount from the balance
                 balance -= amount;
+                // update the balance label
                 updateBalanceLabel();
             } else {
+                // show an error message if the user tries to withdraw more than the balance
                 JOptionPane.showMessageDialog(this, "Insufficient balance!");
             }
         }
     }//GEN-LAST:event_btnWithdrawActionPerformed
-
+    // Deposit button action - Event handler
     private void btnDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositActionPerformed
+        // prompt the user to enter the amount to deposit
         String amountStr = JOptionPane.showInputDialog(this, "Enter amount to deposit:");
+        // check if the user entered an amount
         if (amountStr != null && !amountStr.isEmpty()) {
             double amount = Double.parseDouble(amountStr);
+            // add the amount to the balance
             balance += amount;
+            // update the balance label
             updateBalanceLabel();
         }
     }//GEN-LAST:event_btnDepositActionPerformed

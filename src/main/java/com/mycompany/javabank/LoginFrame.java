@@ -24,7 +24,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         jLabel1.setText("Welcome to Object Oriented Bank");
 
-        jLabel2.setText("Please enter your username and password");
+        jLabel2.setText("Please enter your username(admin) and password(password)");
 
         jLabel3.setText("Username");
 
@@ -130,19 +130,19 @@ public class LoginFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Invalid username or password!");
         }
     }
-
+    // Handle the key press event for the login button
     private void btnLoginKeyPressed(java.awt.event.KeyEvent evt) {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnLoginActionPerformed(null);
         }
     }
-
+    // Handle the key press event for the password field
     private void txtPwdKeyPressed(java.awt.event.KeyEvent evt) {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnLoginActionPerformed(null);
         }
     }
-
+    // Handle the key press event for the username field
     private void txtUsrnKeyPressed(java.awt.event.KeyEvent evt) {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnLoginActionPerformed(null);
